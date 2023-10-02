@@ -2,7 +2,7 @@ export type Post = {
     id:string;
     content:string;
     image?:string;
-    likes:string;
+    likes:Number;
     author:User;
 }
 
@@ -11,4 +11,6 @@ export type User = {
     name:string;
     position:string;
     image?:string;
+    backImage?:string;
+    about?:string;
 }
