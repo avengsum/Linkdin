@@ -20,13 +20,13 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: '#191919',
       }}>
       <Tabs.Screen
         name="index"
         options={{
           title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -43,13 +43,47 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
+
+      <Tabs.Screen 
+      name='network'
+      options={{
+        title:"My Network",
+        tabBarIcon: ({color}) => (
+          <TabBarIcon name='group' color={color} />
+        )
+      }}
       />
+
+      <Tabs.Screen
+      name='new-post'
+      options={{
+        title:"Post",
+        tabBarIcon: ({color}) => (
+          <TabBarIcon name='plus-square' color={color} />
+        )
+      }} />
+
+      <Tabs.Screen
+      name='notification'
+      options={{
+        title:"Notification",
+        tabBarIcon : ({color}) => (
+          <TabBarIcon name='bell' color={color} />
+        )
+      }}
+       />
+       
+      <Tabs.Screen
+      name='jobs'
+      options={{
+        title:'Jobs',
+        tabBarIcon : ({color}) => (
+          <TabBarIcon name='briefcase' color={color} />
+        )
+      }}
+       />
+
+      
     </Tabs>
   );
 }
